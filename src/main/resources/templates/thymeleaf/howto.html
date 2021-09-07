@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTG-8">
+	<title>Thmeleafの色々な使い方</title>
+</head>
+<body>
+	<div class="contents">
+		<h2>Javaのインスタンスやメソッドもそのまま使える</h2>
+		<p th:text="${new java.util.Date().toString()}"></p>
+		
+		<h2>ユーティリティオブジェクト</h2>
+		<p th:text="${#dates.format(new java.util.Date(), 'dd/MM/yyyy HH:mm')}"></p>
+		<p th:text="${#numbers.formatInteger(1234,7)}"></p>
+		<p th:text="${#strings.toUpperCase('Welcome to Spring')}"></p>
+		
+		<h2>パラメータへのアクセス</h2>
+		<p>
+			<span th:text="'idは「'+ ${param.id[0]} + '」'"></span>
+			<span th:text="'nameは「' + ${param.name[0]} + '」です'"></span>
+		</p>
+	</div>
+</body>
+</html>
