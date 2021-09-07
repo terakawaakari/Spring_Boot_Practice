@@ -16,9 +16,17 @@
 		
 		<h2>パラメータへのアクセス</h2>
 		<p>
-			<span th:text="'idは「'+ ${param.id[0]} + '」'"></span>
-			<span th:text="'nameは「' + ${param.name[0]} + '」です'"></span>
+			<span th:if="${param.id != null}" th:text="'idは「'+ ${param.id[0]} + '」'"></span>
+			<span th:if="${param.name != null}" th:text="'nameは「' + ${param.name[0]} + '」です'"></span>
 		</p>
+		
+		<h2>メッセージ式</h2>
+		<p th:text="#{howto.title}"></p>
+		<p th:text="#{howto.message}"></p>
+		
+		<h2>リンク式とhtml</h2>
+		<p><a th:text="別のページ" th:href="@{/other-page}"></a></p>
+		<p><a th:text="詳細ページ" th:href="@{/detail/{id}/(id=${user_id})}"></a></p>
 	</div>
 </body>
 </html>

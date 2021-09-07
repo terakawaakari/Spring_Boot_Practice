@@ -8,6 +8,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class ThymeleafController {
 	@RequestMapping("/thymeleaf")
 	public ModelAndView thmeleaf(ModelAndView mav) {
+		mav.addObject("user_id", 999);
 		mav.setViewName("thymeleaf/howto");
 		return mav;
 	}
